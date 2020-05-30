@@ -1,0 +1,178 @@
+.boxAvialable,
+.boxSelected {
+    background-color: rgb(34, 109, 207);
+    border-radius: 4px;
+    width: 45%;
+    h5 {
+        color: white;
+        font-size: 0.9rem;
+        padding: 0.5rem;
+        margin-bottom: 0rem;
+        padding-bottom: 0;
+    }
+    span p {
+        font-size: 0.7rem;
+        color: white;
+        cursor: pointer;
+        padding: 0.5rem;
+        margin-bottom: 0rem;
+        padding-bottom: 0;
+        &:hover {
+            color: #260101;
+        }
+    }
+}
+
+.boxSelected {
+    background-color: #0442BF;
+    .entities {
+        p,
+        label {
+            padding: 0.5rem 1rem;
+            background-color: white;
+            color: #260101;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            width: 100%;
+            &:hover {
+                opacity: 0.4;
+            }
+            &::before {
+                content: '\2261';
+                color: black;
+                opacity: 0.5;
+                padding-right: 0.5rem;
+            }
+        }
+    }
+}
+
+.entities {
+    p,
+    label {
+        padding: 0.5rem 1rem;
+        background-color: #260101;
+        color: white;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        width: 100%;
+        cursor: pointer;
+        &:hover {
+            opacity: 0.4;
+        }
+        &::before {
+            content: '\2261';
+            color: white;
+            opacity: 0.5;
+            padding-right: 0.5rem;
+        }
+    }
+}
+
+hr {
+    margin: 0.5rem 0.5rem 0rem 0.5rem;
+    border: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.cdk-drag-preview {
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+    padding: 0.1rem 0.2rem;
+    background-color: #033E8C;
+    text-align: center;
+    color: white;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    vertical-align: middle;
+    height: 2rem !important;
+    width: 8rem !important;
+    padding-top: 0.3rem;
+    input[type="checkbox"]+label {
+        background-color: transparent;
+        color: white;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        cursor: pointer;
+        padding: 0rem;
+    }
+}
+
+.transfer {
+    width: 8rem;
+    text-align: center;
+    img {
+        width: 25%;
+        filter: grayscale(1);
+        cursor: pointer;
+        &:hover,
+        &:active {
+            width: 27%;
+        }
+    }
+}
+
+.allSelectedColorChange {
+    p,
+    label {
+        background-color: #949494 !important;
+    }
+}
+
+.tranferActiveFromAvailable {
+    img {
+        filter: none;
+        transform: rotate(180deg);
+    }
+}
+
+.tranferActiveFromSelected {
+    img {
+        filter: none;
+    }
+}
+
+input[type="checkbox"]+label {
+    padding: 0.5rem 1rem;
+    background-color: white;
+    color: #260101;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    width: 100%;
+    &:hover {
+        opacity: 0.4;
+    }
+    &::before {
+        content: '\2261';
+        color: black;
+        opacity: 0.5;
+        padding-right: 0.5rem;
+    }
+}
+
+input[type="checkbox"]:checked+label {
+    background-color: #949494 !important;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+li input[type="checkbox"] {
+    display: none;
+    position: absolute;
+    opacity: 0;
+}
+
+input[type="checkbox"]:focus+label {
+    border: 2px solid #e9a1ff;
+}

@@ -1,0 +1,41 @@
+<p>Form Arrays(for reference) - </p> {{ moveElement.value | json}}
+<div class="d-flex justify-content-between mt-3 mx-3 area" [formGroup]="moveElement">
+    <!-- AVAILABLE  -->
+    <div class="boxAvialable" cdkDropList #todoList="cdkDropList" [cdkDropListData]="moveElement.get('Available').value" [cdkDropListConnectedTo]="[doneList]" (cdkDropListDropped)="drop($event)" formArrayName="Available">
+        <div class="d-flex justify-content-between">
+            <h5>Available</h5>
+            <span>
+              <p class="float-right" (click)="selectClearAllFromAvaliable('select')">Select All</p>
+              <p class="float-right" (click)="selectClearAllFromAvaliable('clear')">Clear All</p>
+            </span>
+        </div>
+        <hr>
+        <div class="row entities m-3" [class.allSelectedColorChange]="allAvailableSelected">
+            <div class="col-4 dragable" *ngFor="let item of moveElement.get('Available').value" cdkDrag>
+                <input type="checkbox" [id]="item" (click)="selectedItemAvialable(item)"><label [for]="item">{{item}}</label>
+            </div>
+        </div>
+    </div>
+    <!-- TRANSFER BUTTON -->
+    <div class="transfer" [class.tranferActiveFromAvailable]="transferActiveFromAvailable" [class.tranferActiveFromSelected]="tranferActiveFromSelected">
+        <img src="./../assets/icons/arrow.png" alt="" (click)="transferSelected()">
+    </div>
+
+    <!-- SELECTED -->
+    <div class="boxSelected" cdkDropList #doneList="cdkDropList" [cdkDropListData]="moveElement.get('Selected').value" [cdkDropListConnectedTo]="[todoList]" (cdkDropListDropped)="drop($event)" formArrayName="Selected">
+        <div class="d-flex justify-content-between">
+            <h5>Selected</h5>
+            <span>
+              <p class="float-right" (click)="selectClearFromSelected('select')">Select All</p>
+              <p class="float-right" (click)="selectClearFromSelected('clear')">Clear All</p>
+            </span>
+        </div>
+        <hr>
+        <div class="row entities m-3" [class.allSelectedColorChange]="allSelected">
+            <div class="col-4 dragable" *ngFor="let item of moveElement.get('Selected').value; let i = index" cdkDrag>
+                <input type="checkbox" [id]="item" (click)="selectedItemSelected(item)"><label [for]="item">{{item}}</label>
+            </div>
+        </div>
+    </div>
+
+</div>
